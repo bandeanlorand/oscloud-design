@@ -5,7 +5,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bandeanlorand.github.io/oscloud-design",
+  "homepage": "https://bandeanlorand.github.io/oscloud-design/dist/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
