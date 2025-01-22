@@ -4,7 +4,7 @@
   "license": "MIT",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "homepage": "https://bandeanlorand.github.io/oscloud-design/dist/",
   "scripts": {
     "dev": "vite",
