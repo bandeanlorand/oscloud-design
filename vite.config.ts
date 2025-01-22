@@ -10,7 +10,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/oscloud-design/dist/' : '/',
+  base: mode === 'production' ? '/oscloud-design/' : '/',
   plugins: [react()],
 }));
 
