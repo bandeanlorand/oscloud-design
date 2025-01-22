@@ -11,12 +11,5 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/oscloud-design/' : '/',
   plugins: [react()],
-  build: {
-    rollupOptions: {
-      output: {
-        entryFileNames: `[name].[hash].mjs`,
-      },
-    },
-  }
 }));
 
