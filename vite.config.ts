@@ -8,8 +8,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Set base path for production only
 export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/oscloud-design/' : '/',
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: `[name].[hash].mjs`,
+      },
+    },
+  }
 }));
+
