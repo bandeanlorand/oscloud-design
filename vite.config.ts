@@ -8,7 +8,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
-  base: '/oscloud-design/', // Set the base path for GitHub Pages
+// Set base path for production only
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/oscloud-design/' : '/',
   plugins: [react()],
-});
+}));
