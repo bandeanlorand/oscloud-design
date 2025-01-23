@@ -1,0 +1,58 @@
+/* START */
+body{
+    background-color: orange;
+    div{
+        border:2px solid red;
+    }
+}
+// aem grid - must be at the beginning of css
+// @import 'aem-grid';
+// libs
+// @import '../../../node_modules/toastr/toastr.scss';
+
+// @import 'vendor/react-tel-input.css';
+
+// $slick-loader-path: '../resources/img/';
+// $slick-font-path: '../resources/fonts/slick/';
+
+// @import '../../../node_modules/slick-carousel/slick/slick.scss';
+// @import '../../../node_modules/slick-carousel/slick/slick-theme.scss';
+
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// @import 'fonts';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// @import 'icons';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// @import 'reset';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// @import 'variables';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// @import 'mixins';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// external
+
+// @import 'bootstrap-components';
+@import 'bootstrap-config/config';
+// @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// internal
+// @import 'base';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// structure
+// @import 'structure';
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+// dev
+//@import "dev";
+/*-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-•-*/
+
+
+
+/*END*/
