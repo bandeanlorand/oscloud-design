@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 import supabase from "../supabase";
 import { useSession } from "../context/SessionContext";
+import Header from "../components/Header/Header";
+
 
 const HomePage = () => {
   const { session } = useSession();
   return (
     <main>
+      <Header/>
       <section className="main-container">
-        <h1 className="header-text">React Supabase Auth Template</h1>
+        <h1 className="header-text">OSCloud - Home Page</h1>
         <p>Current User : {session?.user.email || "None"}</p>
         {session ? (
           <button onClick={() => supabase.auth.signOut()}>Sign Out</button>
@@ -37,6 +40,11 @@ const HomePage = () => {
           </svg>
           Github Repository
         </Link>
+
+        <div className="container mt-5">
+      <h1 className="text-center">Hello, Bootstrap!</h1>
+      <button className="btn btn-primary">Primary Button</button>
+    </div>
       </section>
     </main>
   );
