@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import supabase from "../supabase";
 import { useSession } from "../context/SessionContext";
-import Header from "../components/Header/Header";
+
 
 
 const HomePage = () => {
   const { session } = useSession();
   return (
     <main>
-      <Header/>
+      
       <section className="main-container">
         <h1 className="header-text">OSCloud - Home Page</h1>
         <p>Current User : {session?.user.email || "None"}</p>
@@ -41,11 +41,27 @@ const HomePage = () => {
           Github Repository
         </Link>
 
-        <div className="container mt-5">
-      <h1 className="text-center">Hello, Bootstrap!</h1>
-      <button className="btn btn-primary">Primary Button</button>
-    </div>
+        
       </section>
+      <div className="main-container d-flex">
+        <div id="menu-widget" className="menu-widget">
+            <ul className="list-unstyled">
+                <li><i className="icon-placeholder"></i> <span className="item-text">Menu Item 1</span></li>
+                <li><i className="icon-placeholder"></i> <span className="item-text">Menu Item 2</span></li>
+                {/* <!-- Add more menu items as needed --> */}
+            </ul>
+            <div className="btn-group btn-group-sm position-sticky bottom-0">
+                <button type="button" className="btn btn-secondary settings-btn">Settings</button>
+                <button type="button" className="btn btn-secondary toggle-menu" id="toggle-btn">
+                    <i className="arrow-placeholder"></i> <span className="item-text">Close</span>
+                </button>
+            </div>
+        </div>
+        <div className="page-content">
+            text
+            {/* <!-- Page content here --> */}
+        </div>
+    </div>
     </main>
   );
 };

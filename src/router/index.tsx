@@ -8,7 +8,6 @@ import AuthProtectedRoute from "./AuthProtectedRoute.tsx";
 import Providers from "../Providers.tsx";
 
 const router = createBrowserRouter([
-  // I recommend you reflect the routes here in the pages folder
   {
     path: "/",
     element: <Providers />,
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
         path: "/auth/sign-up",
         element: <SignUpPage />,
       },
-      // Auth Protected routes
+      // Protected routes (wrapped with AuthProtectedRoute)
       {
         path: "/",
         element: <AuthProtectedRoute />,

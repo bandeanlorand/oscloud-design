@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSession } from '../../context/SessionContext';
 import logo from '../../assets/oscloud-logo.svg';
-import { Link } from "react-router-dom";
+
 const Header: React.FC = () => {
   const { session } = useSession() as { session: { user?: { email?: string } } } || null;
 
@@ -44,8 +44,7 @@ const Header: React.FC = () => {
             ) : (
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  {/* <a className="" aria-current="page" href="#">Login</a> */}
-                  <Link className="nav-link" to="/auth/sign-in">Sign In</Link>
+                  <a className="nav-link active" aria-current="page" href="#">Login</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">Register</a>

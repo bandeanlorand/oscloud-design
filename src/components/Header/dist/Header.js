@@ -3,6 +3,7 @@ exports.__esModule = true;
 var react_1 = require("react");
 var SessionContext_1 = require("../../context/SessionContext");
 var oscloud_logo_svg_1 = require("../../assets/oscloud-logo.svg");
+var react_router_dom_1 = require("react-router-dom");
 var Header = function () {
     var _a;
     var session = (SessionContext_1.useSession() || null).session;
@@ -30,7 +31,7 @@ var Header = function () {
                         react_1["default"].createElement("div", null, (_a = session.user) === null || _a === void 0 ? void 0 : _a.email),
                         react_1["default"].createElement("div", null, "Workspace name")))) : (react_1["default"].createElement("ul", { className: "navbar-nav" },
                     react_1["default"].createElement("li", { className: "nav-item" },
-                        react_1["default"].createElement("a", { className: "nav-link active", "aria-current": "page", href: "#" }, "Login")),
+                        react_1["default"].createElement(react_router_dom_1.Link, { className: "nav-link", to: "/auth/sign-in" }, "Sign In")),
                     react_1["default"].createElement("li", { className: "nav-item" },
                         react_1["default"].createElement("a", { className: "nav-link", href: "#" }, "Register")),
                     react_1["default"].createElement("li", { className: "nav-item" },
