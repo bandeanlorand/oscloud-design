@@ -1,0 +1,15 @@
+@import '../../assets/scss/bootstrap-config/variables';
+
+.sticky-top{
+    background-color: $theme-header-bg-color;
+    a.navbar-nav{
+        color:$theme-menu-text-color !important;
+    }
+    .navbar-brand{
+        img{
+            width: 100%;
+            height: auto;
+        }
+        width: 80px;
+    }
+}

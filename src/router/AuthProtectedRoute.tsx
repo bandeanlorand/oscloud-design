@@ -1,12 +1,18 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import NotFoundPage from "../pages/404Page";
 import { useSession } from "../context/SessionContext";
 
 const AuthProtectedRoute = () => {
   const { session } = useSession();
-
-  // If session exists, allow access to the child components.
-  // Otherwise, redirect to the sign-in page.
-  return session ? <Outlet /> : <Navigate to="/auth/sign-in" replace />;
+  if (!session) {
+    // or you can redirect to a different page and show a message
+    return <NotFoundPage />;
+  }
+  return <Outlet />;
 };
 
 export default AuthProtectedRoute;
+
+
+
+

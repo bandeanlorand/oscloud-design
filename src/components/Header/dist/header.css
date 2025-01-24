@@ -1,0 +1,14 @@
+/* Base template styling - this is the styling if no teme is used*/
+.sticky-top {
+  background-color: #fff;
+}
+.sticky-top a.navbar-nav {
+  color: red !important;
+}
+.sticky-top .navbar-brand {
+  width: 80px;
+}
+.sticky-top .navbar-brand img {
+  width: 100%;
+  height: auto;
+}

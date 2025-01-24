@@ -3,8 +3,8 @@
 // import supabase from "../supabase";
 // import { useSession } from "../context/SessionContext";
 exports.__esModule = true;
-var HomePage = function () {
+var Apps = function () {
     // const { session } = useSession();
-    return (React.createElement("main", null, "This is the homepage content"));
+    return (React.createElement("main", null, "This is the Apps Page"));
 };
-exports["default"] = HomePage;
+exports["default"] = Apps;

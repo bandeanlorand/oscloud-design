@@ -2,6 +2,7 @@
 exports.__esModule = true;
 var react_router_dom_1 = require("react-router-dom");
 var HomePage_tsx_1 = require("../pages/HomePage.tsx");
+var Apps_tsx_1 = require("../pages/Apps.tsx");
 var SignInPage_tsx_1 = require("../pages/auth/SignInPage.tsx");
 var SignUpPage_tsx_1 = require("../pages/auth/SignUpPage.tsx");
 var ProtectedPage_tsx_1 = require("../pages/ProtectedPage.tsx");
@@ -17,6 +18,10 @@ var router = react_router_dom_1.createBrowserRouter([
             {
                 path: "/",
                 element: React.createElement(HomePage_tsx_1["default"], null)
+            },
+            {
+                path: "/Apps",
+                element: React.createElement(Apps_tsx_1["default"], null)
             },
             {
                 path: "/auth/sign-in",
