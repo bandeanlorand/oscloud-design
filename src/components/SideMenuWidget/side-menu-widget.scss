@@ -1,0 +1,190 @@
+// @import '../../assets/scss/variables';
+
+// .menu-widget {
+//     width: 300px;
+//     transition: width 0.3s ease;
+//     background-color: #f8f9fa;
+//     height: calc(100vh - 46px);
+//     overflow: hidden;
+//     display: flex;
+//     flex-direction: column;
+//     padding-top: 45px;
+//     position: fixed;
+
+//     @media (min-width: 768px) {
+//         position: relative;
+//     }
+
+
+//     +div.py-4.p-2 {
+//         padding-left: 100px !important;
+
+//         @media (min-width: 768px) {
+//             padding-left: 20px !important;
+//         }
+//     }
+
+//     &.closed {
+//         width: 80px;
+//     }
+
+//     .list-unstyled {
+//         padding: 0;
+//         margin: 0;
+//         list-style: none;
+//         flex-grow: 1;
+
+//         li {
+//             padding: 10px 15px;
+//             display: flex;
+//             align-items: center;
+//             cursor: pointer;
+
+//             a {
+//                 display: flex;
+
+//                 &.active {
+//                     font-weight: bold;
+//                 }
+//             }
+
+//             .icon-placeholder {
+//                 width: 30px;
+//                 height: 30px;
+//                 background-color: #b0bd92;
+//                 font-style: normal;
+//                 text-align: center;
+//                 line-height: 30px;
+
+
+//                 margin-right: 10px;
+
+//                 &.home-icon::before {
+//                     content: "🏠";
+//                 }
+
+//                 &.user-icon::before {
+//                     content: "👤";
+//                 }
+
+//                 &.settings-icon::before {
+//                     content: "⚙️";
+//                 }
+
+//                 &.elements-icon::before {
+//                     content: "📃";
+//                 }
+//             }
+
+//             .item-text {
+//                 display: inline-block;
+//                 opacity: 1;
+//                 transition: opacity 0.3s ease;
+
+//                 .menu-widget.closed & {
+//                     opacity: 0;
+//                     visibility: hidden;
+//                 }
+//             }
+//         }
+//     }
+
+//     .btn-group {
+//         position: sticky;
+//         bottom: 0;
+//         margin: 10px;
+
+//         .settings-btn {
+//             display: inline-block;
+//         }
+
+//         .toggle-menu {
+//             display: flex;
+//             align-items: center;
+
+//             .arrow-placeholder {
+//                 width: 30px;
+//                 height: 30px;
+
+//                 background-color: #b0bd92;
+//                 margin-right: 10px;
+//                 font-size: 22px;
+//                 line-height: 30px;
+//                 font-weight: bold;
+//                 text-align: center;
+
+//                 &.arrow-left::before {
+//                     content: "←";
+//                     color: #000;
+//                 }
+
+//                 &.arrow-right::before {
+//                     content: "→";
+//                     color: #000;
+//                 }
+//             }
+
+//             .item-text {
+//                 display: inline-block;
+//                 transition: opacity 0.3s ease;
+
+//                 .menu-widget.closed & {
+//                     opacity: 0;
+//                     visibility: hidden;
+//                 }
+//             }
+//         }
+//     }
+// }
+.menu-widget {
+    width: 300px;
+  transition: width 0.3s;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  
+  .page-content {
+    flex-grow: 1;
+  }
+  
+  .menu-widget.collapsed {
+    width: 80px;
+  }
+  
+  .menu-widget .item-text {
+    display: inline;
+  }
+  
+  .menu-widget.collapsed .item-text,.menu-widget.collapsed .btn-secondary.settings-btn {
+    display: none;
+  }
+  
+  .menu-widget .icon-placeholder,
+  .arrow-placeholder {
+    /* Insert your icon styling here */
+    width: 20px;
+    height: 20px;
+    display: block;
+    border: 10px solid green;
+    margin: 5px;
+  }
+  .arrow-placeholder.arrow-right::before {
+    content: '→'; /* Just as placeholder, consider using icon fonts */
+  }
+  
+  .arrow-placeholder.arrow-left::before {
+    content: '←'; /* Similarly, placeholder for left direction */
+  }
+  
+  
+  /* Ensure buttons stick to the bottom */
+  .position-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  

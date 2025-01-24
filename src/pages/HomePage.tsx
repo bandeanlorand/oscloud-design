@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <main>
       
-      This is the homepage content
+      <h1>This is the homepage content</h1>
       
     </main>
   );

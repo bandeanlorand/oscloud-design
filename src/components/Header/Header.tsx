@@ -10,13 +10,17 @@ const Header: React.FC = () => {
 
   return (
     <header className='sticky-top'>
-      <div className='container-fluid'>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#"><img src={logo} alt="OSCloud Logo" /></a>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="user-menu">
+      <div className='container-fluid p-0 '>
+        <nav className="navbar navbar-expand-lg bg-light px-2 py-0" data-bs-theme="light">
+          <div className="container-fluid container-fluid d-flex align-items-center justify-content-start">
+            <div className='border-end border-1  p-2'>
+              <a className="navbar-brand d-flex align-items-center" href="#"><img src={logo} alt="OSCloud Logo" /></a>
+            </div>
+
+            {/* <div className="user-menu d-flex align-items-center  ps-2"> */}
+            <button className="navbar-toggler ms-auto mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
             {session ? (
               <>
                 <div className="collapse navbar-collapse" id="navbarNav">
@@ -43,9 +47,33 @@ const Header: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className='d-flex'>
-                  <div>{session.user?.email}<button onClick={() => supabase.auth.signOut()}>Sign Out</button></div>
-                  <div>Workspace name</div>
+                <div className='d-flex  d-flex align-items-center justify-content-start'>
+                <div className="collapse navbar-collapse" id="navbarRight">
+                  <ul className="navbar-nav me-auto1">
+                    <li className="nav-item secondary">
+                      <a className="nav-link" href="#">Package Name V</a>
+                    </li>
+                    <li className='border-end border-1 px-1 mx-1'></li>
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{session.user?.email}</a>
+                      <div className="dropdown-menu">
+                        <a className="dropdown-item" href="#">Some action</a>
+                        <a className="dropdown-item" href="#">Something else here</a>
+                        <div className="dropdown-divider"></div>
+                        <a className="dropdown-item" onClick={() => supabase.auth.signOut()}>Sign Out</a>
+                      </div>
+                    </li>
+                    <li className='border-end border-1 px-1 mx-1'></li>
+                    <li className="nav-item dropdown">
+                      <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Workspace name</a>
+                      <div className="dropdown-menu">
+                        <a className="dropdown-item" href="#">Some action</a>
+                        <a className="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
                 </div>
               </>
             ) : (
@@ -81,8 +109,8 @@ const Header: React.FC = () => {
                 </li>
               </ul>
             )}
+            {/* </div> */}
           </div>
-
         </nav>
       </div>
     </header>

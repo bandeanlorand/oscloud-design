@@ -7,9 +7,9 @@
 const Apps = () => {
   // const { session } = useSession();
   return (
-    <main>
+    <main >
       
-      This is the Apps Page
+      <h1>This is the Apps Page</h1>
       
     </main>
   );

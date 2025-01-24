@@ -1,9 +1,9 @@
 @import '../../assets/scss/bootstrap-config/variables';
 
 .sticky-top{
-    background-color: $theme-header-bg-color;
+    // background-color: $theme-header-bg-color;
     a.navbar-nav{
-        color:$theme-menu-text-color !important;
+        // color:$theme-menu-text-color !important;
     }
     .navbar-brand{
         img{
@@ -12,4 +12,7 @@
         }
         width: 80px;
     }
+}
+.nav-item.secondary .nav-link{
+    --bs-nav-link-font-size:14px
 }

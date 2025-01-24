@@ -1,7 +1,8 @@
 "use strict";
 exports.__esModule = true;
 var react_router_dom_1 = require("react-router-dom");
-// import "./Menu.css"; // Add styling for the menu
+require("./side-menu-widget.scss"); // Add styling for the menu
+require("./side-menu-widget.js"); // Add styling for the menu
 var SideMenuWidget = function () {
     return (React.createElement("nav", { id: "menu-widget", className: "menu-widget menu" },
         React.createElement("ul", null,
@@ -10,6 +11,11 @@ var SideMenuWidget = function () {
                         var isActive = _a.isActive;
                         return (isActive ? "active" : "");
                     } }, "Homepage")),
+            React.createElement("li", null,
+                React.createElement(react_router_dom_1.NavLink, { to: "/elements", className: function (_a) {
+                        var isActive = _a.isActive;
+                        return (isActive ? "active" : "");
+                    } }, "Elements")),
             React.createElement("li", null,
                 React.createElement(react_router_dom_1.NavLink, { to: "/protected", className: function (_a) {
                         var isActive = _a.isActive;

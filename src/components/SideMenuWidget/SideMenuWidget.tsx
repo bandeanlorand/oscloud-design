@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-// import "./Menu.css"; // Add styling for the menu
+import "./side-menu-widget.scss"; // Add styling for the menu
+import "./side-menu-widget.js"; // Add styling for the menu
 
 const SideMenuWidget = () => {
   return (
@@ -10,6 +11,13 @@ const SideMenuWidget = () => {
             to="/" 
             className={({ isActive }) => (isActive ? "active" : "")}>
            Homepage
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/elements" 
+            className={({ isActive }) => (isActive ? "active" : "")}>
+           Elements
           </NavLink>
         </li>
         <li>

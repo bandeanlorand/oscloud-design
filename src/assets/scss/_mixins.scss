@@ -1,0 +1,257 @@
+// _mixins.scss
+
+///////////////////////////////////////
+// clearfix
+%clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+///////////////////////////////////////
+
+@mixin box-sizing($box-model: border-box) {
+  -webkit-box-sizing: $box-model; //* Safari/Chrome, other WebKit */
+  -moz-box-sizing: $box-model; //* Firefox, other Gecko */
+  box-sizing: $box-model; //* Opera/IE 8+ */
+}
+
+@mixin element-sizing($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin element-sizing-square($size) {
+  width: $size;
+  height: $size;
+}
+
+///////////////////////////////////////
+// font size
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+///////////////////////////////////////
+// breakpoints
+@mixin breakpoint($point) {
+  @if $point == desktophd {
+    @media (min-width: 120em) {
+      @content;
+    } //1920px
+  }
+  @if $point == desktop {
+    @media (min-width: 100em) {
+      @content;
+    } //1600px
+  } @else if $point == laptophd {
+    @media (min-width: 90em) {
+      @content;
+    } // 1440px
+    // @media (min-width: 83.5em) { @content ; } //1336px
+  } @else if $point == laptop {
+    // @media (min-width: 80em) { @content ; } //1280px
+    @media (min-width: 75em) {
+      @content;
+    } //1200px
+    // @media (min-width: 64em) { @content ; } //1024px
+  } @else if $point == lg-screen {
+    @media (min-width: 992px) {
+      @content;
+    } //992px
+  } @else if $point == tablethd {
+    @media (min-width: 60em) {
+      @content;
+    } //960px
+  } @else if $point == tablet {
+    @media (min-width: 50em) {
+      @content;
+    } //800px
+  } @else if $point == phablet {
+    @media (min-width: 40em) {
+      @content;
+    } //640px
+  } @else if $point == mobilehd {
+    @media (min-width: 37.5em) {
+      @content;
+    } //600px
+  } @else if $point == mobile {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+
+  //// only for dev team
+  @else if $point == mobiledev {
+    @media (max-width: 60em) {
+      @content;
+    } //960px
+  }
+  ////
+}
+
+///////////////////////////////////////
+// color bars (top and bottom)
+@mixin bar($barPosL, $barPosR, $barWidth, $barColor) {
+  z-index: 10;
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  // left: -$barPosLeft;
+  left: $barPosL;
+  right: $barPosR;
+  width: $barWidth;
+  background-color: $barColor;
+}
+
+///////////////////////////////////////
+// Top items height
+// @mixin top-height {
+//   $x-height: 80px;
+//
+//   height: $x-height - 10px;
+//
+//   @include breakpoint(laptop){
+//     height: $x-height;
+//   }
+//
+// }
+
+///////////////////////////////////////
+// Rounded corners
+@mixin rounded($radius: 0.225em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+///////////////////////////////////////
+// Positioning to absolute center
+@mixin positioning($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  -webkit-transform: translate(-$left, -$top);
+  -moz-transform: translate(-$left, -$top);
+  -ms-transform: translate(-$left, -$top);
+  -o-transform: translate(-$left, -$top);
+  transform: translate(-$left, -$top);
+
+  /*        
+    -webkit-transform: translate(calc(-#{$left} + 0.5px), calc(-#{$top} + 0.5px));
+	   -moz-transform: translate(calc(-#{$left} + 0.5px), calc(-#{$top} + 0.5px));
+	    -ms-transform: translate(calc(-#{$left} + 0.5px), calc(-#{$top} + 0.5px));
+	     -o-transform: translate(calc(-#{$left} + 0.5px), calc(-#{$top} + 0.5px));
+	        transform:translate(calc(-#{$left} + 0.5px), calc(-#{$top} + 0.5px));
+    */
+}
+
+// gradients
+///////////////////////////////////////
+// Gradients
+@mixin gradient($from, $to) {
+  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+  background: -moz-linear-gradient(top, $from, $to);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+
+// shadow
+///////////////////////////////////////
+@mixin shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+///////////////////////////////////////
+// not used yet
+///////////////////////////////////////
+
+// @include transition(all,2s,ease-out); //
+///////////////////////////////////////
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition: $what $time $how;
+  -ms-transition: $what $time $how;
+  -o-transition: $what $time $how;
+  transition: $what $time $how;
+}
+
+@mixin text-field {
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 0.5em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  @include rounded();
+  @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+}
+
+@mixin button($color: $red, $text_color: $white) {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 0.5em 2em 0.55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  @include rounded();
+  @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+  color: $text_color !important;
+  font-weight: bold;
+  border: solid 1px darken($color, 18%);
+  background: $color;
+  @include gradient(saturate($color, 15%), darken($color, 15%));
+
+  &:hover {
+    text-decoration: none;
+    background: saturate($color, 10%);
+    @include gradient(saturate($color, 5%), darken($color, 5%));
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+    color: saturate($color, 15%);
+    @include gradient(saturate($color, 15%), lighten($color, 15%));
+  }
+}
+///////////////////////////////////////
+
+///////////////////////////////////////
+// Grid
+// This is mixin which you will include in parent
+// of columns. It kills default margin of inline-block
+// elements.
+// @mixin row () {
+//   font-size: 0;
+// }
+//
+// // This is column mixins.
+// @mixin col ($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+//     width: 100%;
+//     display: inline-block;
+//     font-size: 16px;
+//     padding-left: if($first, 0, $gap);
+//     padding-right: if($last, 0, $gap);
+//
+//     @media only screen and (min-width: 768px) {
+//             width: percentage($col/$sum);
+//             vertical-align: $align;
+//     }
+//
+//     &.fluid { width: percentage($col/$sum); }
+// }
